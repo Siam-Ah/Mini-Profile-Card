@@ -15,11 +15,7 @@ function App() {
 }
 
 function Avatar() {
-  return (
-    <div>
-      <img className="avatar" src="haaland.jpg" alt="Erling Haaland" />
-    </div>
-  );
+  return <img className="avatar" src="haaland.jpg" alt="Erling Haaland" />;
 }
 
 function Intro() {
@@ -38,24 +34,21 @@ function Intro() {
 function SkillList() {
   return (
     <div className="skill-list">
-      <p style={{ backgroundColor: "blue" }} className="skill">
-        Goal-Scoring
-      </p>
-      <p style={{ backgroundColor: "yellow" }} className="skill">
-        Strength
-      </p>
-      <p style={{ backgroundColor: "green" }} className="skill">
-        Speed
-      </p>
-      <p style={{ backgroundColor: "pink" }} className="skill">
-        Positioning
-      </p>
-      <p style={{ backgroundColor: "cyan" }} className="skill">
-        Work Ethic
-      </p>
-      <p style={{ backgroundColor: "orange" }} className="skill">
-        Team Play
-      </p>
+      <Skill skill="Goal-Scoring" color="red" emoji="🥅" />
+      <Skill skill="Strength" color="green" emoji="💪" />
+      <Skill skill="Team Play" color="blue" emoji="🥇" />
+      <Skill skill="Speed" color="yellow" emoji="🏃" />
+      <Skill skill="Positioning" color="pink" emoji="🧘‍♂️" />
+      <Skill skill="Work Ethic" color="orange" emoji="👔" />
+    </div>
+  );
+}
+
+function Skill(props) {
+  return (
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      <span>{props.skill}</span>
+      <span>{props.emoji}</span>
     </div>
   );
 }
