@@ -33,6 +33,11 @@ const skills = [
     level: "advanced",
     color: "orange",
   },
+  {
+    skill: "Weak foot",
+    level: "beginner",
+    color: "purple",
+  },
 ];
 
 function App() {
@@ -85,12 +90,17 @@ function Skill({ skillObj }) {
     <div className="skill" style={{ backgroundColor: skillObj.color }}>
       <span>{skillObj.skill}</span>
       <span>
+        {skillObj.level === "beginner" && "👶"}
+        {skillObj.level === "intermediate" && "👍"}
+        {skillObj.level === "advanced" && "💪"}
+      </span>
+      {/* <span>
         {skillObj.level === "advanced"
           ? "💪"
           : skillObj.level === "intermediate"
           ? "👍"
           : "👶"}
-      </span>
+      </span> */}
       {/* <span>{props.emoji}</span> */}
     </div>
   );
